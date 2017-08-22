@@ -1,0 +1,12 @@
+Credentials cache: API:25081
+        Principal: bhalderm@42.US.ORG
+    Cache version: 0
+
+Server: krbtgt/42.US.ORG@42.US.ORG
+Client: bhalderm@42.US.ORG
+Ticket etype: aes256-cts-hmac-sha1-96, kvno 1
+Ticket length: 316
+Auth time:  Jun 26 11:47:50 2017
+End time:   Jun 26 21:47:50 2017
+Ticket flags: enc-pa-rep, pre-authent, initial, proxiable, forwardable
+Addresses: addressless 

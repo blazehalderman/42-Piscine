@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_takes_place.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bhalderm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/06 18:43:16 by bhalderm          #+#    #+#             */
+/*   Updated: 2017/07/06 19:26:56 by bhalderm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <stdio.h>
+
+int	ft_time(int hour)
+{
+	printf("%s","THE FOLLOWING TAKES PLACE BETWEEN");
+	printf("%d", hour);
+}
+
+void	ft_takes_place(int hour)
+{
+	char clock;
+	
+	if(hour <= 12)
+		clock = "A.M.";
+	while (hour > 12)
+	{
+		hour %= 12;
+		ft_time(hour) + clock;
+	}
+	ft_time(hour);
+	return (0);
+}
+
+int	main(void)
+{
+
+	ft_takes_place(12);
+	return (0);
+
+}

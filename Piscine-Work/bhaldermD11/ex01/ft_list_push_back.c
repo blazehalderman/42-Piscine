@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bhalderm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/11 15:52:02 by bhalderm          #+#    #+#             */
+/*   Updated: 2017/07/12 18:35:33 by bhalderm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_list.h"
+
+void	ft_list_push_back(t_list **begin_list, void *data)
+{
+	t_list	*elem;
+	t_list	*new;
+
+	elem = *begin_list;
+	new = ft_create_elem(data);
+	if (elem)
+	{
+		while (elem->next != 0)
+			elem = elem->next;
+		elem->next = new;
+	}
+	else
+		*begin_list = ft_create_elem(data);
+}

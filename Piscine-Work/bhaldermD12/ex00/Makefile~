@@ -1,0 +1,30 @@
+#******************************************************************************#
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bhalderm <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/07/13 13:01:59 by bhalderm          #+#    #+#              #
+#    Updated: 2017/07/13 16:24:56 by bhalderm         ###   ########.fr        #
+#                                                                              #
+#******************************************************************************#
+
+NAME = ft_display_file
+
+SRC = ft_display_file.c
+
+HEAD = display.h
+
+all: $(NAME)
+
+$(NAME): 
+	gcc -c -Wall -Wextra -Werror $(SRC) -o $(NAME) -I $(HEAD)
+
+clean:
+	@rm -f $(NAME)*.o
+
+fclean: clean
+	@rm -rf $(NAME)
+
+re: fclean all

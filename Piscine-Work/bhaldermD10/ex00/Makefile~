@@ -1,0 +1,41 @@
+#******************************************************************************#
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bhalderm <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/07/10 11:56:53 by bhalderm          #+#    #+#              #
+#    Updated: 2017/07/10 15:26:02 by bhalderm         ###   ########.fr        #
+#                                                                              #
+#******************************************************************************#
+SRCS = srcs
+
+NAME = libft.a
+
+HEADER = includes/
+
+FLAGS = -Wall -Wextra -Werror
+
+all: list 
+	@echo "library created:" $(NAME)
+gen_o:
+	@gcc $(FLAGS) -c $(SRCS)/*.c
+	@echo "creating object files"
+
+gen_lib: gen_o
+	@ar rc $(NAME) *.o
+	@echo "creating library"
+
+list: gen_lib
+	@ar -t $(NAME)
+
+clean:
+	@rm -f *.o
+	@echo "removing object files"
+
+fclean: clean
+	@rm -f $(NAME)
+	@echo "removing file"
+
+re: fclean all

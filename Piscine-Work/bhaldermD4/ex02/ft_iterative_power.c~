@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bhalderm <bhalderm@student.42.us.org>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/30 13:48:58 by bhalderm          #+#    #+#             */
+/*   Updated: 2017/07/01 12:58:49 by bhalderm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+
+int ft_iterative_power(int nb, int power)
+{
+	int i;
+	int x;
+	
+	x = nb;
+	i = power;
+	if(i == 1)
+		return(x);
+	if(i == 0)
+		return(1);
+	if(i < 0)
+		return(0);
+	while (i > 1)
+	{
+		i--;
+		nb *= x;  	
+	}
+	return nb;
+}
+
+int main()
+{
+	int x;
+
+	x = ft_iterative_power(4, 3);
+	printf("%d", x);
+	return(0);
+}

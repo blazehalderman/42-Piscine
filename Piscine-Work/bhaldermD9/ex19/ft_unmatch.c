@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unmatch.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bhalderm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/07/07 12:47:13 by bhalderm          #+#    #+#             */
+/*   Updated: 2017/07/07 13:17:52 by bhalderm         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_unmatch(int *tab, int length)
+{
+	int i;
+	int temp;
+	int x;
+
+	x = 1;
+	i = 0;
+	temp = 0;
+	while(i <= length)
+	{
+		temp = tab[i];
+		while(x <= length && temp[x]){
+			if (temp == tab[x])
+			{
+				i++;
+				break;
+			}
+			else if (x == length && temp != tab[x])
+				return(temp);
+			x++;
+		}
+	}
+	return(temp);
+}
+
+int	main(void)
+{
+	int	pon;
+	
+	pon = {1, 2, 3, 4, 5, 6, 7, 8};
+	ft_unmatch(pon, 8);
+	return (0);
+
+}
